@@ -50,23 +50,6 @@ function formatDay(timestamp) {
 
 // Forecast next 5 days
 
-function displayForecast(response) {
-  let forecast = response.data.daily;
-
-  let forecastEl = document.querySelector(".next-5-days_container");
-
-  let forecastHTML = `<div class="next-5-days_row">`;
-  forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
-      forecastHTML = forecastHTML + ``;
-    }
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-
-  forecastEl.innerHTML = forecastHTML;
-}
-
 function getForecast(coordinates) {
   let apiKey = "343bb4d2fc1a4234edcd750t80ofe9d0";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;

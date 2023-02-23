@@ -88,52 +88,6 @@ form {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* next-5-days */
-.weather-next-5-days {
-    width: 100%;
-    margin-top: 1em;
-}
-
-.next-5-days_container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.next-5-days_row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 0.3em;
-    padding: 0.8em 0;
-    width: 100%;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.20);
-    font-size: 1.19em;
-    text-align: center;
-}
-
-.next-5-days_label {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.83em;
-}
-
-.next-5-days_date,
-.next-5-days_high,
-.next-5-days_low,
-.next-5-days_icon,
-.next-5-days_rain,
-.next-5-days_wind {
-    width: 33.33333%;
-    font-size: 0.95em;
-}
-
-.next-5-days_date,
-.next-5-days_high,
-.next-5-days_low {
-    margin-bottom: 0.6em;
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 
