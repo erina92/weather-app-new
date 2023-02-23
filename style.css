@@ -19,6 +19,12 @@ body {
     flex-wrap: wrap;
 }
 
+form {
+    width: 100%;
+    display: flex;
+}
+
+
 /* location-and-date */
 .location-and-date {
     width: 100%;
@@ -66,13 +72,14 @@ body {
 .current-stats {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.current-stats_value {
+.current-stats-wind,
+.current-stats-humidity {
     margin-top: 1em;
     font-size: 1.44em;
 }

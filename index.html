@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -26,12 +26,24 @@
 
 <body>
     <main class="container">
+        <form id="search-form">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="city-input" placeholder="Enter your city here"
+                    autocomplete="off" />
+            </div>
+            <div class="mx-3 input-group-append">
+                <button type="submit" value="Search" class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary" id="current-location">📍</button>
+            </div>
+        </form>
         <div class="location-and-date">
             <h1 class="location-and-date_location">Taranto, IT</h1>
-            <div>Thursday 23rd February</div>
+            <div class="date">Thursday 23rd February</div>
         </div>
         <div class="current-temperature">
-            <div class="current-temperature_icon-container"><img src="#" alt="" class="current-temperature_icon"></div>
+            <div class="current-temperature_icon-container">
+                <img src="#" alt="" class="current-temperature_icon" />
+            </div>
             <div class="current-temperature_content-container">
                 <div class="current-temperature_value">&deg;</div>
                 <div class="current-temperature_description"></div>
@@ -39,22 +51,10 @@
         </div>
         <div class="current-stats">
             <div>
-                <div class="current-stats-value">&deg;</div>
-                <div class="current-stats-label"></div>
-                <div class="current-stats-value">&deg;</div>
-                <div class="current-stats-label"></div>
-            </div>
-            <div>
-                <div class="current-stats-value"></div>
-                <div class="current-stats-label"></div>
-                <div class="current-stats-value"></div>
-                <div class="current-stats-label"></div>
-            </div>
-            <div>
-                <div class="current-stats-value"></div>
-                <div class="current-stats-label"></div>
-                <div class="current-stats-value"></div>
-                <div class="current-stats-label"></div>
+                <div class="current-stats-wind"></div>
+                <div class="current-stats-label">Wind</div>
+                <div class="current-stats-humidity"></div>
+                <div class="current-stats-label">Humidity</div>
             </div>
         </div>
         <div class="weather-next-5-days">
@@ -62,17 +62,14 @@
             <div class="next-5-days_container">
                 <div class="next-5-days_row">
                     <div class="next-5-days_date">
-                        <div class="next-5-days_label"></div>
                     </div>
                     <div class="next-5-days_low">&deg;</div>
                     <div class="next-5-days_label">Low</div>
                     <div class="next-5-high">&deg;</div>
                     <div class="next-5-days_label">High</div>
                     <div class="next-5-days_icon">
-                        <img src="#" alt="">
+                        <img src="#" alt="" />
                     </div>
-                    <div class="next-5-days_rain">%</div>
-                    <div class="next-5-days_label">Rain</div>
                     <div class="next-5-days_wind">
                         mph
                         <div class="next-5-days_label">Wind</div>
@@ -80,17 +77,14 @@
                 </div>
                 <div class="next-5-days_row">
                     <div class="next-5-days_date">
-                        <div class="next-5-days_label"></div>
                     </div>
                     <div class="next-5-days_low">&deg;</div>
                     <div class="next-5-days_label">Low</div>
                     <div class="next-5-high">&deg;</div>
                     <div class="next-5-days_label">High</div>
                     <div class="next-5-days_icon">
-                        <img src="#" alt="">
+                        <img src="#" alt="" />
                     </div>
-                    <div class="next-5-days_rain">%</div>
-                    <div class="next-5-days_label">Rain</div>
                     <div class="next-5-days_wind">
                         mph
                         <div class="next-5-days_label">Wind</div>
@@ -98,17 +92,14 @@
                 </div>
                 <div class="next-5-days_row">
                     <div class="next-5-days_date">
-                        <div class="next-5-days_label"></div>
                     </div>
                     <div class="next-5-days_low">&deg;</div>
                     <div class="next-5-days_label">Low</div>
                     <div class="next-5-high">&deg;</div>
                     <div class="next-5-days_label">High</div>
                     <div class="next-5-days_icon">
-                        <img src="#" alt="">
+                        <img src="#" alt="" />
                     </div>
-                    <div class="next-5-days_rain">%</div>
-                    <div class="next-5-days_label">Rain</div>
                     <div class="next-5-days_wind">
                         mph
                         <div class="next-5-days_label">Wind</div>
@@ -116,17 +107,14 @@
                 </div>
                 <div class="next-5-days_row">
                     <div class="next-5-days_date">
-                        <div class="next-5-days_label"></div>
                     </div>
                     <div class="next-5-days_low">&deg;</div>
                     <div class="next-5-days_label">Low</div>
                     <div class="next-5-high">&deg;</div>
                     <div class="next-5-days_label">High</div>
                     <div class="next-5-days_icon">
-                        <img src="#" alt="">
+                        <img src="#" alt="" />
                     </div>
-                    <div class="next-5-days_rain">%</div>
-                    <div class="next-5-days_label">Rain</div>
                     <div class="next-5-days_wind">
                         mph
                         <div class="next-5-days_label">Wind</div>
@@ -134,17 +122,14 @@
                 </div>
                 <div class="next-5-days_row">
                     <div class="next-5-days_date">
-                        <div class="next-5-days_label"></div>
                     </div>
                     <div class="next-5-days_low">&deg;</div>
                     <div class="next-5-days_label">Low</div>
                     <div class="next-5-high">&deg;</div>
                     <div class="next-5-days_label">High</div>
                     <div class="next-5-days_icon">
-                        <img src="#" alt="">
+                        <img src="#" alt="" />
                     </div>
-                    <div class="next-5-days_rain">%</div>
-                    <div class="next-5-days_label">Rain</div>
                     <div class="next-5-days_wind">
                         mph
                         <div class="next-5-days_label">Wind</div>
