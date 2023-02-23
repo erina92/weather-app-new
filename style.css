@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Shantell Sans', cursive;
+}
+
+body {
+    margin: 16px;
+    font-size: 100%;
+    font-family: 'Shantell Sans', cursive;
+    color: white;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(187, 141, 184) 0%, rgb(95, 94, 145) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.location-and-date {
+    width: 100%;
+    border: 3px solid blue;
+}
+
+.location-and-date_location {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.current-temperature {
+    display: flex;
+    margin-top: 0.25em;
+    width: 100%;
+}
+
+.current-temperature_icon-container {
+    flex-grow: 1.25;
+    text-align: center;
+}
+
+.current-temperature_content-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.current-temperature_icon {
+    width: 10.5em;
+}
+
+.current-temperature_value {
+    font-size: 5.25em;
+    font-weight: 300;
+}
+
+.current-temperature_description {
+    margin-top: -0.5em;
+    margin-left: -0.6em;
+    font-size: 1.125em;
+}
+
+.current-stats {
+    width: 100%;
+    border: 3px solid rosybrown;
+}
+
+.weather-next-5-days {
+    width: 100%;
+    border: 3px solid yellow;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .current-temperature,
+    .current-stats {
+        width: 50%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 980px;
+        margin: 16px auto;
+        font-size: 1.1em;
+    }
+}
