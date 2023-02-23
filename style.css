@@ -19,9 +19,9 @@ body {
     flex-wrap: wrap;
 }
 
+/* location-and-date */
 .location-and-date {
     width: 100%;
-    border: 3px solid blue;
 }
 
 .location-and-date_location {
@@ -30,6 +30,7 @@ body {
     font-weight: 600;
 }
 
+/* current-temperature */
 .current-temperature {
     display: flex;
     margin-top: 0.25em;
@@ -61,14 +62,95 @@ body {
     font-size: 1.125em;
 }
 
+/* current-stats */
 .current-stats {
     width: 100%;
-    border: 3px solid rosybrown;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.current-stats_value {
+    margin-top: 1em;
+    font-size: 1.44em;
+}
+
+.current-stats_label {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .weather-next-5-days {
     width: 100%;
-    border: 3px solid yellow;
+}
+
+/* next-5-days */
+.weather-next-5-days {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.next-5-days_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.next-5-days_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.3em;
+    padding: 0.8em 0;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.20);
+    font-size: 1.19em;
+    text-align: center;
+}
+
+.next-5-days_label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.83em;
+}
+
+.next-5-days_date,
+.next-5-days_high,
+.next-5-days_low,
+.next-5-days_icon,
+.next-5-days_rain,
+.next-5-days_wind {
+    width: 33.33333%;
+    font-size: 0.95em;
+}
+
+.next-5-days_date,
+.next-5-days_high,
+.next-5-days_low {
+    margin-bottom: 0.6em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .next-5-days_date,
+    .next-5-days_high,
+    .next-5-days_low,
+    .next-5-days_icon,
+    .next-5-days_rain,
+    .next-5-days_wind {
+        width: 16.666666%;
+        margin-bottom: initial;
+    }
+
+    .next-5-days_date {
+        order: -2;
+    }
+
+    .next-5-days_icon {
+        order: -1;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -77,6 +159,14 @@ body {
     .current-temperature,
     .current-stats {
         width: 50%;
+    }
+
+    .current-stats {
+        margin-bottom: 1em;
+        padding-bottom: 0;
+        border-top: none;
+        border-bottom: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
     }
 }
 
