@@ -53,30 +53,12 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
 
-  let forecastEl = document.querySelector(".weather-next-5-days");
+  let forecastEl = document.querySelector(".next-5-days_container");
 
   let forecastHTML = `<div class="next-5-days_row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `
-      <div class="next-5-days_date">${formatDay(forecastDay.time)}
-        <div class="next-5-days_label">${
-          forecastDay.condition.description
-        }</div>
-      </div>
-      <div class="next-5-days_high">${Math.round(
-        forecastDay.temperature.maximum
-      )}&deg;</div>
-      <div class="next-5-days_label">High</div>
-      <div class="next-5-days_low">${Math.round(
-        forecastDay.temperature.minimum
-      )}&deg;</div>
-      <div class="next-5-days_label">Low</div>
-      <div class="next-5-days_icon">
-        <img src="${forecastDay.condition.icon_url}" alt="">
-      </div>`;
+    if (index < 5) {
+      forecastHTML = forecastHTML + ``;
     }
   });
 
